@@ -5,7 +5,8 @@ var doSearch = function(array, targetValue) {
 	var max = array.length - 1;
     var guess;
     var guesses = 0;
-    
+        //no need for checking if(max<min) first before while as the >= means loop will stop running when that happens 
+        //thus you can return -1 outside the loop instead making the code more efficient
         while( max >= min){
             guess = Math.floor((max + min)/2);
             guesses = guesses + 1;
