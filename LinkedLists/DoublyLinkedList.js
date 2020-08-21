@@ -199,3 +199,5 @@ class LinkedList {
     return parts.map((n) => util.inspect(n.node.value)).join(' -> ');
   }
 }
+
+module.exports = LinkedList;
