@@ -50,22 +50,22 @@ class LinkedList {
   }
   
   add(value, position = 0) {
-    if (position === 0) { // <1>
+    if (position === 0) { 
       return this.addFirst(value);
     }
 
-    if (position === this.size) { // <2>
+    if (position === this.size) {
       return this.addLast(value);
     }
     // Adding element in the middle
     const current = this.get(position);
     if (current) {
-      const newNode = new Node(value); // <3>
-      newNode.previous = current.previous; // <4>
-      newNode.next = current; // <5>
+      const newNode = new Node(value); 
+      newNode.previous = current.previous;
+      newNode.next = current;
 
-      current.previous.next = newNode; // <6>
-      current.previous = newNode; // <7>
+      current.previous.next = newNode;
+      current.previous = newNode;
       this.size += 1;
       return newNode;
     }
@@ -92,13 +92,13 @@ class LinkedList {
   }
   
   find(callback) {
-    for (let current = this.first, position = 0; // <1>
+    for (let current = this.first, position = 0;
       current; // <2>
-      position += 1, current = current.next) { // <3>
-      const result = callback(current, position); // <4>
+      position += 1, current = current.next) {
+      const result = callback(current, position);
 
       if (result !== undefined) {
-        return result; // <5>
+        return result;
       }
     }
     return undefined; // not found
